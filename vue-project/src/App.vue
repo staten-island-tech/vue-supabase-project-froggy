@@ -1,11 +1,7 @@
-<script setup>
-import { ref, onMounted } from 'vue'
-import { supabase } from './supabase'
-
-
-</script>
+<script setup></script>
 
 <template>
+  <div><RouterView /></div>
   <h1></h1>
   <p></p>
 </template>
