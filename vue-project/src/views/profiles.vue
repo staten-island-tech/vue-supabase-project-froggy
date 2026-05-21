@@ -5,14 +5,14 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { supabase } from './supabase'
-const profiles = ref([])
+const profile = ref([])
 const error = ref(null)
 onMounted(async () => {
-  let { data: profileData, error: err } = await supabase.from('profiles').select('*')
+  let { data: profileData, error: err } = await supabase.from('profile').select('*')
   if (err) {
     error.value = err.message
   } else {
-    profiles.value = profileData
+    profile.value = profileData
   }
 })
 </script>
