@@ -28,7 +28,7 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <form @submit.prevent="handleSubmit" id="ihatecoding">
+  <form @submit.prevent="handleSubmit" id="icoding">
     <input v-model="title" id="tital" type="text" placeholder="Title" required />
     <input v-model="picture" id="image" type="text" placeholder="Image URL" required />
     <textarea v-model="description" id="deez" placeholder="Description"></textarea>
