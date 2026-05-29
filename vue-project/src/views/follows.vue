@@ -2,8 +2,9 @@
   <div class="container">
     <h1>followers</h1>
     <h2>{{ count }}</h2>
-    <button @click="tofollow">follow</button>
-    <button @click="tounfollow">unfollow</button>
+
+    <button v-if="count.value === 0" @click="tofollow">follow</button>
+    <button v-else @click="tounfollow">unfollow</button>
   </div>
 </template>
 
@@ -18,6 +19,9 @@ function tounfollow() {
 }
 
 //swap unfollow and follow upon click
+//if follow = true
+//then show unfollow and count +1
+//else show follow and count = count
 </script>
 
 <style scoped>
