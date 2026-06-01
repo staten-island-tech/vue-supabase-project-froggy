@@ -3,18 +3,24 @@
     <h1>followers</h1>
     <h2>{{ count }}</h2>
 
-    <button v-if="count.value === 0" @click="tofollow">follow</button>
-    <button v-else @click="tounfollow">unfollow</button>
+    <button v-if="following" @click="(toggleButtons(), onfollow())">follow</button>
+    <button v-else @click="(toggleButtons(), onunfollow())">unfollow</button>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 const count = ref(0)
-function tofollow() {
+const following = ref(true)
+
+const toggleButtons = () => {
+  following.value = !following.value
+}
+
+function onfollow() {
   count.value++
 }
-function tounfollow() {
+function onunfollow() {
   count.value--
 }
 
