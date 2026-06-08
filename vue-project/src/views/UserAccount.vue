@@ -45,7 +45,14 @@ const user= reactive({username: '', password:''})
 
     <button @click="loginUser">Login</button>
 
-    <h4>or Create <RouterLink to="/3">new account</RouterLink></h4>
+    <h4>
+      or Create
+      <RouterLink
+        to="/2
+      "
+        >New Account</RouterLink
+      >
+    </h4>
   </div>
 </template>
 
