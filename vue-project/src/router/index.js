@@ -1,13 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import createpin from '@/views/CreatePin.vue'
+import UserAccount from '@/views/UserAccount.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
 
 {
-  path: '/CreatePin',
-  name: 'CreatePin',
-  component: createpin,
+  path: '/UserAccount',
+  name: 'UserAccount',
+  component: UserAccount,
+},
+
+{
+  path: '/Cr',
+  name: 'Us',
+  component: CreatePost,
 },
   ],
 })
