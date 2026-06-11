@@ -1,13 +1,13 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 // 1. Reactive state for the form inputs
-const title = ref('');
-const picture = ref('');
-const description = ref('');
+const title = ref('')
+const picture = ref('')
+const description = ref('')
 
 // hold items gallery items
-const gallery = ref([]);
+const gallery = ref([])
 
 // 3. Handle form submission
 const handleSubmit = () => {
@@ -16,15 +16,15 @@ const handleSubmit = () => {
     title: title.value,
     picture: picture.value,
     description: description.value,
-    button: "more",
-  };
+    button: 'more',
+  }
 
-  gallery.value.unshift(newWork);
+  gallery.value.unshift(newWork)
 
-  title.value = '';
-  picture.value = '';
-  description.value = '';
-};
+  title.value = ''
+  picture.value = ''
+  description.value = ''
+}
 </script>
 
 <template>
@@ -37,7 +37,7 @@ const handleSubmit = () => {
 
   <div class="gallery-container">
     <div v-for="(item, index) in gallery" :key="index" class="container">
-      <div class="picture"> 
+      <div class="picture">
         <img :src="item.picture" alt="Gallery image" />
       </div>
       <div class="title">{{ item.title }}</div>
