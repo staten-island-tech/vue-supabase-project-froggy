@@ -2,7 +2,6 @@
 
 <template>
   <div><RouterView /></div>
-
   <p></p>
 </template>
 

@@ -29,7 +29,7 @@ const router = createRouter({
       component: CreatePost,
     },
     {
-      path: '/3',
+      path: '/',
       name: 'UserAccount',
       component: UserAccount,
     },
