@@ -44,15 +44,6 @@ const user= reactive({username: '', password:''})
     <input v-model="password" type="password" placeholder="Enter password" />
 
     <button @click="loginUser">Login</button>
-
-    <h4>
-      or Create
-      <RouterLink
-        to="/2
-      "
-        >New Account</RouterLink
-      >
-    </h4>
   </div>
 </template>
 
