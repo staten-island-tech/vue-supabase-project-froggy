@@ -44,7 +44,6 @@ const user= reactive({username: '', password:''})
     <input v-model="password" type="password" placeholder="Enter password" />
 
     <button @click="loginUser">Login</button>
-    <p>{{ message }}</p>
   </div>
 </template>
 
