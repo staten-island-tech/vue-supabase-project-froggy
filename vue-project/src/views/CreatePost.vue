@@ -1,3 +1,28 @@
+
+
+<template>
+  
+  <form @submit.prevent="handleSubmit" id="icoding" style="max-width: 350px; margin: auto;">
+    <h1>Create Post</h1>
+    <input v-model="title" id="tital" type="text" placeholder="Title" style="display:block; width:100%; margin-bottom:10px;" required />
+    <input v-model="picture" id="image" type="url" placeholder="Image URL" style="display:block; width:100%; margin-bottom:10px;" required />
+    <textarea v-model="description" id="deez" placeholder="Description" style="display:block; width:100%; margin-bottom:10px; "></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="gallery-container">
+    <div v-for="(item, index) in gallery" :key="index" class="container">
+      <div class="picture">
+        <img :src="item.picture" alt="Gallery image" />
+      </div>
+      <div class="title">{{ item.title }}</div>
+      <div class="description">
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+</template>
+
 <script setup>
 import { ref } from 'vue'
 
@@ -26,25 +51,3 @@ const handleSubmit = () => {
   description.value = ''
 }
 </script>
-
-<template>
-  <form @submit.prevent="handleSubmit" id="icoding">
-    <input v-model="title" id="tital" type="text" placeholder="Title" required />
-    <input v-model="picture" id="image" type="text" placeholder="Image URL" required />
-    <textarea v-model="description" id="deez" placeholder="Description"></textarea>
-    <button type="submit">Submit</button>
-  </form>
-
-  <div class="gallery-container">
-    <div v-for="(item, index) in gallery" :key="index" class="container">
-      <div class="picture">
-        <img :src="item.picture" alt="Gallery image" />
-      </div>
-      <div class="title">{{ item.title }}</div>
-      <div class="description">
-        <p>{{ item.description }}</p>
-      </div>
-      <button class="bigger">{{ item.button }}</button>
-    </div>
-  </div>
-</template>
