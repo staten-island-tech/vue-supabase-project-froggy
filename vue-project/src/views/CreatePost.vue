@@ -1,35 +1,42 @@
+<!-- <template>
+  <form @submit.prevent="ok" id="icoding">
+    <input v-model="picture" id="image" type="text" placeholder="Image URL" required />
+    <textarea v-model="description" id="deez" placeholder="Description"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+</template>
 <script setup>
 import { ref } from 'vue'
+import { supabase } from '@/supabase'
 
 // 1. Reactive state for the form inputs
-const title = ref('')
 const picture = ref('')
 const description = ref('')
 
-// hold items gallery items
-const gallery = ref([])
+const ok = async () => {
+  const  {data, error} = await supabase.from('posts').insert([
+    {
 
-// 3. Handle form submission
-const handleSubmit = () => {
-  // Create the new object
-  const newWork = {
-    title: title.value,
-    picture: picture.value,
-    description: description.value,
-    button: 'more',
+  
+    image: picture.value,
+    caption: description.value,
+  
   }
-
-  gallery.value.unshift(newWork)
-
-  title.value = ''
-  picture.value = ''
-  description.value = ''
+])
+if (error) {
+  console.log(error);
+  alert('Post Failed to Create')
+} else {
+  alert('Post SUccessfully Created')
+  console.log(data)
+}
 }
 </script>
 
+ -->
 <template>
-  <form @submit.prevent="handleSubmit" id="icoding">
-    <input v-model="title" id="tital" type="text" placeholder="Title" required />
+  <form @submit.prevent="ok" id="icoding">
     <input v-model="picture" id="image" type="text" placeholder="Image URL" required />
     <textarea v-model="description" id="deez" placeholder="Description"></textarea>
     <button type="submit">Submit</button>
@@ -40,7 +47,6 @@ const handleSubmit = () => {
       <div class="picture">
         <img :src="item.picture" alt="Gallery image" />
       </div>
-      <div class="title">{{ item.title }}</div>
       <div class="description">
         <p>{{ item.description }}</p>
       </div>
@@ -48,3 +54,29 @@ const handleSubmit = () => {
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import { supabase } from '../supabase'
+
+// 1. Reactive state for the form inputs
+const picture = ref('')
+const description = ref('')
+
+const ok = async () => {
+  const { data, error } = await supabase.from('posts').insert([
+    {
+      image: picture.value,
+      caption: description.value,
+    }
+  ])
+
+  if (error) {
+    console.log(error)
+    alert('Post Failed to Create')
+  } else {
+    alert('Post SUccessfully Created')
+    console.log(data)
+  }
+}
+</script>

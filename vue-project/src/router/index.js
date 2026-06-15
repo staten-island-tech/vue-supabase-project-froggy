@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-<<<<<<< HEAD
 import UserAccount from '@/views/UserAccount.vue'
+import CreatePost from '@/views/CreatePost.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,27 +13,10 @@ const router = createRouter({
 },
 
 {
-  path: '/Cr',
-  name: 'Us',
+  path: '/Create',
+  name: 'Create',
   component: CreatePost,
 },
-=======
-import CreatePost from '@/views/CreatePost.vue'
-import UserAccount from '@/views/UserAccount.vue'
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/2',
-      name: 'CreatePost',
-      component: CreatePost,
-    },
-    {
-      path: '/',
-      name: 'UserAccount',
-      component: UserAccount,
-    },
->>>>>>> 07e195ad4ea7474681bfe1ce23c19d1a765dcee8
   ],
 })
 
